@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const database = require('./config/db');
 // var bai1Router = require('./routes/lab1');
 var lab1 = require('./routes/lab1_05');
 var product = require('./routes/Product');
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+database.connect();
 app.use('/users', usersRouter);
 app.use('/lab1_05', lab1);
 app.use('/Product', product);

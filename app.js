@@ -7,9 +7,11 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const database = require('./config/db');
+// const database = require('././routes/api');
 // var bai1Router = require('./routes/lab1');
 var lab1 = require('./routes/lab1_05');
 var product = require('./routes/Product');
+var users = require('./routes/Users_');
 var app = express();
 
 // view engine setup
@@ -27,6 +29,7 @@ database.connect();
 app.use('/users', usersRouter);
 app.use('/lab1_05', lab1);
 app.use('/Product', product);
+app.use('/Users_', users);
 
 
 
